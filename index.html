@@ -1,0 +1,768 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+    /* class persona {
+        #nombreCompleto;
+        #edad;
+
+        constructor (){
+            this.#nombreCompleto = '';
+            this.#edad = 0;
+        }
+
+        set setNombreCompleto(value){
+            this.#nombreCompleto = value;
+        }
+
+        get getNombreCompleto(){
+            return this.#nombreCompleto;
+        }
+
+        set setEdad(value) { 
+            this.#edad = value; 
+        }
+
+        get getEdad(){
+            return this.#edad;
+        }
+
+        saludar(){
+            console.log(`Hola me llamo ` + this.getNombreCompleto + 
+             `y mi edad es `+ this.getEdad + ` años`);
+        }
+     }
+
+    class Aprendiz extends persona {
+        #ficha;
+        #programa;
+
+
+        constructor(){
+            super();
+            this.#ficha = '';
+            this.#programa = '';
+        }
+
+        set setFicha (value) {
+            this.#ficha = value;
+        }
+
+        get getFicha(){
+            return this.#ficha;
+        }
+
+        set setPrograma(value){
+            this.#programa = value;
+        }
+
+        get getPrograma(){
+            return this.#programa;
+        }
+
+        matricula(){
+            console.log(`Estoy matriculado en la ficha ` + this.getFicha +
+            `del programa ` + this.getPrograma)
+        }
+    } 
+
+    class Instructor extends persona{
+        #profecion;
+        #tipoVinculacion;
+
+        constructor () {
+            super();
+            this.#profecion = '';
+            this.#tipoVinculacion = '';
+        }
+
+        set setProfecion(value){
+            this.#profecion = value;
+        }
+
+        get getProfecion(){
+            return this.#profecion;
+        }
+
+        set setTipoVinculacion(value) {
+            this.#tipoVinculacion = value;
+        }
+
+        get getTipoVinculacion(){
+            return this.#tipoVinculacion;
+        }
+
+        contrato(){
+            console.log('Mi profecion es ' + this.getProfecion + 
+            'y mi vinculacion es de tipo ' + this.getTipoVinculacion);
+        }
+    }
+
+    class InstructorPlanta extends Instructor {
+        #fechaVinculacion;
+
+        constructor () {
+            super();
+            this.#fechaVinculacion = 0;
+        }
+
+        set setFechaVinculacion(value) {
+            this.#fechaVinculacion = value;
+        }
+
+        get getFechaVinculacion(){
+            return this.#fechaVinculacion;
+        }
+
+        contrato(){
+            console.log('Mi profecion es ' + this.getProfecion + 
+            'con vinculacion de tipo ' + this.getTipoVinculacion + 
+            ' desde el año ' + this.getFechaVinculacion);
+        }
+    }
+
+    const aprendiz1 = new Aprendiz;
+   
+    aprendiz1.setNombreCompleto = 'Nisson Morales';
+    aprendiz1.setEdad = 17;
+    aprendiz1.getFicha = '2798618';
+    aprendiz1.setPrograma = 'Analisis y desarrollo de software'
+
+    aprendiz1.saludar();
+    aprendiz1.matricula();
+
+    const aprendiz2 = new Aprendiz;
+   
+    aprendiz2.setNombreCompleto = 'Pablo perez';
+    aprendiz2.setEdad = 29;
+    aprendiz2.getFicha = '268954';
+    aprendiz2.setPrograma = 'Cocina'
+
+    aprendiz2.saludar();
+    aprendiz2.matricula();
+
+    const instructor1 = new InstructorPlanta;
+   
+    instructor1.setNombreCompleto = 'Sebastian';
+    instructor1.setEdad = 39;
+    instructor1.getProfecion = 'Ingeniero en sistemas';
+    instructor1.setTipoVinculacion = 'Planta'
+    instructor1.setFechaVinculacion = 2019;
+
+    instructor1.saludar();
+    instructor1.contrato();*/
+
+    console.log('//////////////////// RETO 1 /////////////////////');
+
+    class Persona {
+        #documento;
+        #nombreCompleto;
+
+        constructor(){
+            this.#documento = '';
+            this.#nombreCompleto = '';
+        }
+
+        informacion(){
+            console.log(`-Hola mi nombre es ` + this.#nombreCompleto + 
+            ` y  mi documeto es ` + this.#documento)
+        }
+
+        set setDocumento(value){
+            this.#documento = value;
+        }
+
+        get getDocumento(){
+            return this.#documento;
+        }
+
+        set setNombreCompleto(value){
+            this.#nombreCompleto = value;
+        }
+
+        get getNombreCompleto(){
+            return this.#nombreCompleto;
+        }
+    };
+
+    class Aprendiz extends Persona {
+        #ficha;
+        #programa;
+
+        constructor(){
+            super();
+            this.#ficha;
+            this.#programa;
+        }
+
+        set setFicha(value){
+            this.#ficha = value;
+        }
+
+        get getFicha(){
+            return this.#ficha;
+        }
+
+        set setPrograma(value){
+            this.#programa = value;
+        }
+
+        get getPrograma(){
+            return this.#programa;
+        }
+
+        matricula(){
+            console.log(`-Estoy matriculado en la ficha ` + this.getFicha +
+            `del programa ` + this.getPrograma)
+        }
+    };
+
+    class EtapaLectiva extends Aprendiz{
+        #numeroTrimestre;
+        #fechaInicio;
+        #fechaTerminacion;
+
+        constructor(){
+            super();
+            this.#numeroTrimestre = '';
+            this.#fechaInicio = '';
+            this.#fechaTerminacion = '';
+        }
+
+        set setNumeroTrimestre(value) {
+            this.#numeroTrimestre = value; 
+        }
+
+        get getNumeroTrimestre(){
+            return this.#numeroTrimestre;
+        }
+
+        set setFechaInicio(value){
+             this.#fechaInicio = value;
+        }
+
+        get getFechaInicio(){
+            return this.#fechaInicio;
+        }
+
+        set setFechaTerminacion(value){
+            this.#fechaTerminacion = value;
+        }
+
+        get getFechaTerminacion (){
+            return this.#fechaTerminacion;
+        }
+
+        informacion(){
+            console.log(`-Hola mi nombre es ` + this.getNombreCompleto + 
+            ` y  mi documeto es ` + this.getDocumento +
+            ` y estoy matriculado en la ficha ` + this.getFicha +
+            `  del programa ` + this.getPrograma)
+
+        }
+        estado(){
+            console.log(`-Me encuentro en el trimestre  ` + this.getNumeroTrimestre + 
+            `  que inicio  ` + this.getFechaInicio + `  y termina  ` + 
+            this.getFechaTerminacion )
+        };
+     
+}
+    class EtapaPractica extends  EtapaLectiva{
+        #modalida;
+
+        constructor(){
+            super();
+            this.#modalida;
+        }
+
+        set setModalida(value){
+            this.#modalida = value;
+        }
+
+        get getModalidad(){
+            return this.#modalida;
+        }
+
+      estado(){
+        console.log(`-Me encuentro en la modalidad ` + this.getModalidad + 
+            `  que inicia ` + this.getFechaInicio + `  y termina  ` + 
+            this.getFechaTerminacion )
+      }
+    };
+
+    class instructor extends Persona {
+        #profecion;
+        #salarioBasico;
+
+        constructor(){
+            super();
+            this.#profecion = '';
+            this.#salarioBasico = 0;
+        }
+
+        set setProfecion(value){
+            this.#profecion = value;
+        }
+
+        get getProfecion(){
+            return this.#profecion;
+        }
+
+        set setSalarioBasico(value){
+            this.#salarioBasico = value;
+        }
+
+        get getSalarioBasico(){
+            return this.#salarioBasico;
+        }
+
+        contrato(){
+            console.log(`-Hola mi nombre es ` + this.getNombreCompleto + 
+            `   enseño ` +  this.#profecion + ` y mi salario es  ` + this.#salarioBasico);
+        }
+    };
+
+    class instructorPlanta2 extends instructor{
+        #grado;
+        #fechaVinculacion;
+
+        constructor(){
+            super();
+            this.#grado = 0;
+            this.#fechaVinculacion = '';
+        }
+
+        set setGrado(value){
+            this.#grado = value;
+        }
+
+        get getGrado (){
+            return this.#grado;
+        }
+
+        set setFechaVinculacion (value){
+            this.#fechaVinculacion = value;
+        }
+
+        get getFechaVinculacion(){
+            return this.#fechaVinculacion;
+        }
+
+        estado(){
+        console.log(`-Soy instructor plata de cocina grado ` + this.getGrado + 
+            `  que inicie ` + this.getFechaVinculacion)
+      }
+
+        sueldo(){
+            console.log(`-Soy grado 17 y gano ` + this.getGrado )
+        }
+    };
+
+    class instructorContrato extends instructor{
+        #duracionContrato;
+        #fechaVinculacion;
+
+        constructor(){
+            super();
+            this.#duracionContrato = 0;
+            this.#fechaVinculacion = '';
+        }
+
+        set setDuracionContrato(value){
+            this.#duracionContrato = value;
+        }
+
+        get getDuracionContrato(){
+            return this.#duracionContrato;
+        }
+
+        set setFechaVinculacion(value){
+            this.#fechaVinculacion = value;
+        }
+
+        get getFechaVinculacion(){
+            return this.#fechaVinculacion;
+        }
+
+        estado(){
+            console.log(`-Mi contrato es de  ` + this.getDuracionContrato + 
+            ` trimestres y inicio el dia  ` + this.getFechaVinculacion  )
+        }
+
+        sueldo(){
+            console.log(`-Soy grado 17 y gano ` + this.setGrado )
+        }
+    }
+
+    const persona1 = new Persona();
+
+    persona1.setDocumento = '10525020';
+    persona1.setNombreCompleto = 'david gomez';
+
+    persona1.informacion();
+
+    const aprendiz1 = new Aprendiz();
+
+    aprendiz1.setDocumento = '10525020';
+    aprendiz1.setNombreCompleto = 'david gomez';
+    aprendiz1.setFicha = '2798618'
+    aprendiz1.setPrograma = 'analisis y desarrollo de software';
+
+    
+    aprendiz1.matricula();
+
+    const lectiva = new EtapaLectiva();
+
+    lectiva.setNombreCompleto = 'juan';
+    lectiva.setDocumento = '5215212';
+    lectiva.setFicha = '7815112'
+    lectiva.setPrograma = 'hatware'
+    lectiva.setNumeroTrimestre = '5';
+    lectiva.setFechaInicio = '10 de julio del 2023';
+    lectiva.setFechaTerminacion = '9 de enero del 2025';
+
+    lectiva.informacion();
+    lectiva.estado();
+
+    const practica = new EtapaPractica();
+
+    practica.setNombreCompleto = 'valentina';
+    practica.setDocumento = '107089522';
+    practica.setFicha = '289798';
+    practica.setPrograma = 'cocina';
+    practica.setModalida = 'contrado de aprendizaje ';
+    practica.setFechaInicio = '10 de enero del 2025';
+    practica.setFechaTerminacion = '20 de julio del 2025';
+
+    practica.informacion();
+    practica.estado();
+
+    const instructor1 = new instructor();
+
+    instructor1.setNombreCompleto = 'sebastian';
+    instructor1.setProfecion = 'Agropecuaria'
+    instructor1.setSalarioBasico = 1500000;
+
+    instructor1.contrato();
+
+    const instructorPlanta1  = new instructorPlanta2();
+
+    instructorPlanta1.setNombreCompleto = 'oscar';
+    instructorPlanta1.setDocumento = '107089522';
+    instructorPlanta1.setPrograma = 'sistemas';
+    instructorPlanta1.setFechaVinculacion = '30 septiempre 2022'
+    instructorPlanta1.setGrado = 4.899133;
+
+    instructorPlanta1.informacion();
+    instructorPlanta1.estado();
+    instructorPlanta1.sueldo();
+    
+    const instructorContrato1 = new instructorContrato();
+    
+    instructorContrato1.setNombreCompleto = 'oscar';
+    instructorContrato1.setDocumento = '107089522';
+    instructorContrato1.setPrograma = 'sistemas';
+    instructorContrato1.setFechaVinculacion = '30 septiempre 2022'
+    instructorContrato1.setGrado = 4.899133;
+    instructorContrato1.setDuracionContrato = 5;
+
+    instructorContrato1.informacion();
+    instructorContrato1.estado();
+    instructorContrato1.sueldo();
+
+
+    console.log('//////////////// RETO 2 ////////////')
+
+
+    class Producto {
+        #codigo;
+        #titulo;
+        #autor;
+
+        constructor(){
+            this.#codigo = '';
+            this.#titulo = '';
+            this.#autor = '';
+        }
+
+        set setCodigo(value){
+            this.#codigo = value;
+        }
+
+        get getCodigo(){
+            return this.#codigo;
+        }
+
+        set setTitulo(value){
+            this.#titulo = value;
+        }
+
+        get getTitulo(){
+            return this.#titulo;
+        }
+
+        set setAutor(value){
+            this.#autor = value;
+        }
+
+        get getAutor(){
+            return this.#autor;
+        }
+
+        informacion(){
+            console.log(`-El  codigo es ` + this.getCodigo + 
+            ` el titulo es ` + this.getTitulo + ` y  el autor es ` + 
+            this.getAutor )
+        }
+    };
+
+    class ProductoImpreso extends Producto{
+        #editorial;
+        #año;
+        #precio;
+
+        constructor(){
+            super();
+            this.#editorial = '';
+            this.#año = '';
+            this.#precio = 0;
+        }
+
+        set setEditorial(value){
+            this.#editorial = value;
+        }
+
+        get getEditorial(){
+            return this.#editorial;
+        }
+
+        set setAño(value){
+            this.#año = value;
+        }
+
+        get getAño(){
+            return this.#año;
+        }
+
+        set setPrecio(value){
+            this.#precio = value;
+        }
+
+        get getPrecio(){
+            return this.#precio;
+        }
+
+        informacion(){
+            console.log(`-El  codigo es ` + this.getCodigo + 
+            ` el titulo es ` + this.getTitulo + ` y  el autor es ` + 
+            this.getAutor + ` el ` + this.getEditorial + 
+            ` del año ` + this.getAño + ` y el precio es ` + this.getPrecio)
+        }
+    };
+
+    class Revista extends ProductoImpreso{
+        #volumen;
+
+        constructor(){
+            super();
+            this.#volumen = '';
+        }
+
+        set setVolumen(value){
+            this.#volumen = value;
+        }
+
+        get getVolumen(){
+            return this.#volumen;
+        }
+
+        informacion(){
+            console.log(`-El  codigo es ` + this.getCodigo + 
+            ` el titulo es ` + this.getTitulo + ` y  el autor es ` + 
+            this.getAutor )
+        }
+
+        estado(){
+            console.log(`-El ` + this.getEditorial + 
+            ` del año ` + this.getAño + ` y el precio es ` + this.getPrecio + 
+            ' el volumen ' + this.getVolumen)
+        }
+    };
+
+    class Libro extends ProductoImpreso{
+        #idioma;
+
+        constructor(){
+            super();
+            this.#idioma = '';
+        }
+
+        set setIdioma(value){
+            this.#idioma = value;
+        }
+
+        get getIdioma(){
+            return this.#idioma;
+        }
+
+        informacion(){
+            console.log(`-El nombre del libro es ` + this.getTitulo +
+            ` el autor es ` + this.getAutor + ` y su codigo es ` + 
+            this.getCodigo + ` y su idioma es ` + this.getIdioma)
+        }
+
+        estado(){
+            console.log(`-El editorial ` + this.getEditorial + ` del año ` + 
+            this.getAño + ` con un precio de ` + this.getPrecio)
+        }
+    };
+
+    class ProductoGrabado extends Producto{
+        #tiempoDuracion;
+        #medioTecnologico;
+
+        constructor(){
+            super();
+            this.#medioTecnologico = 0;
+            this.#tiempoDuracion = '';
+        }
+
+        set setTiempoDuracion(value){
+            this.#tiempoDuracion = value;
+        }
+
+        get getTiempoDuracion(){
+            return this.#tiempoDuracion
+        }
+
+        set setMedioTecnologico(value){
+            this.#medioTecnologico = value;
+        }
+
+        get getMedioTecnologico(){
+            return this.#medioTecnologico;
+        }
+
+        informacion(){
+            console.log('-El codigo es ' + this.getCodigo + ' el titulo ' +
+            this.getTitulo + ' el autor se llama ' + this.getAutor +  
+            ' tiempo de duracion del producto grabado es de ' + 
+            this.getTiempoDuracion + 'minutos y el medio tecnologico es ' + 
+            this.getMedioTecnologico);
+        }
+    };
+
+    class ProductoSoftware extends Producto{
+        #version;
+        #sistemaOperativo;
+
+        constructor(){
+            super();
+            this.#version = '';
+            this.#sistemaOperativo = '';
+        }
+
+        set setVersion(value){
+            this.#version =  value;
+        }
+
+        get getVersion(){
+            return this.#version;
+        }
+
+        set setSistemaOperativo(value){
+            this.#sistemaOperativo =  value;
+        }
+
+        get getSistemaOperativo(){
+            return this.#sistemaOperativo;
+        }
+
+        informacion(){
+            console.log('-El codigo es ' + this.getCodigo + ' el titulo ' +
+            this.getTitulo + ' el autor se llama ' + this.getAutor +  
+            ' el sistema operativo es ' +  this.getSistemaOperativo +
+             ' y su version es  ' + this.getVersion)
+        }
+    }
+
+    const producto1 = new Producto();
+    
+    producto1.setCodigo = '01';
+    producto1.setTitulo = 'al lado tuyo';
+    producto1.setAutor = 'paquita';
+
+    producto1.informacion();
+    
+    const productoImpreso1 = new ProductoImpreso();
+    
+
+
+    productoImpreso1.setCodigo = '02';
+    productoImpreso1.setTitulo = 'Todo por ti';
+    productoImpreso1.setAutor = 'Chipi';
+    productoImpreso1.setEditorial = 'Editorial en el que se da una opinión ' + 
+    'sobre la obligatoriedad de las vacunas contra el Covid-19';
+    productoImpreso1.setAño = '2012';
+    productoImpreso1.setPrecio = 120000;
+
+    productoImpreso1.informacion();
+
+    const revista1 = new Revista();
+
+    revista1.setCodigo = '03';
+    revista1.setTitulo = 'trabajo social';
+    revista1.setAutor = 'adriana melo';
+    revista1.setEditorial = 'Editorial en el que se da una opinión ' + 
+    'sobre la obligatoriedad de las vacunas contra el Covid-19';
+    revista1.setAño = '2023';
+    revista1.setPrecio = 15000;
+    revista1.setVolumen = '3'
+
+    revista1.informacion();
+    revista1.estado();
+
+    const libro1 = new Libro();
+
+    libro1.setCodigo = '04';
+    libro1.setTitulo = 'los hermanos grim';
+    libro1.setAutor = 'valentina  toro';
+    libro1.setEditorial = 'son cuentos infantiles';
+    libro1.setPrecio = 20000;
+    libro1.setAño = '2020';
+    libro1.setVolumen = '9';
+    libro1.setIdioma = 'Español';
+
+    libro1.informacion();
+    libro1.estado();
+
+    const grabacion1 = new ProductoGrabado();
+
+    grabacion1.setCodigo = '05';
+    grabacion1.setTitulo = 'duro de matar';
+    grabacion1.setAutor = 'Javi londres';
+    grabacion1.setTiempoDuracion = 150;
+    grabacion1.setMedioTecnologico = 'audiovisual'
+
+    grabacion1.informacion();
+    
+
+    const aplicacion = new ProductoSoftware();
+
+    aplicacion.setCodigo = '06';
+    aplicacion.setTitulo = 'Carros';
+    aplicacion.setAutor = 'vale duarte';
+    aplicacion.setVersion = '1.0.0,3.0.0';
+    aplicacion.setSistemaOperativo = 'Microsoft Windows';
+
+    aplicacion.informacion();
+
+    </script>
+</body>
+</html>
